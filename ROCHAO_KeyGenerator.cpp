@@ -47,6 +47,4 @@ int main(int argc, char* argv[])
     std::cout << keyGen->GenerateKeyStrings(keyCount);
 
     delete keyGen;
-  //  std::cout << KeyGenerator::GenerateKeyString(baseName, size_t(20), 2);
-   // std::cout << KeyGenerator::GenerateKeyString(baseName, size_t(20), 2);
 }
