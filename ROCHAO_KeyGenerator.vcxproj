@@ -126,6 +126,16 @@
     <ClCompile Include="KeyGenerator.cpp" />
     <ClCompile Include="KeyGenerator.h" />
     <ClCompile Include="ROCHAO_KeyGenerator.cpp" />
+    <ClCompile Include="Util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="config.ini">
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

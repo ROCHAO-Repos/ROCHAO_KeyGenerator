@@ -1,24 +1,37 @@
 #pragma once
 
 #include <iostream>
+#include <INIReader.h>
 
 using namespace std;
 
 extern const string allowedString;
-extern const string baseName;
 
 class KeyGenerator
 {
 private:
+	//Key Generation Members
 	size_t mSectionLength;
 	int mSectionCount;
-public:
-	KeyGenerator();
-	KeyGenerator(size_t sectionLength, int sectionCount);
+	string mKeyBaseName;
 
-	void setGenerationValues(size_t sectionLength, int sectionCount);
+	//HTTP Post Members
+	string mPostURL;
+	string mPostFields;
+	//CSRF Members
+
+	bool mIsCSRFEnabled;
+	string mCSRFCookieName;
+	string mCSRFHeaderName;
+public:
+	KeyGenerator(string INIPath);
+
+
 	string GenerateKeyString();
 
-	string GenerateKeyStrings(int count);
+	void GenerateKeyStrings(int count);
 
+	string getCSRFCookie();
+
+	void runKeyCurlRquest(string keyString);
 };
