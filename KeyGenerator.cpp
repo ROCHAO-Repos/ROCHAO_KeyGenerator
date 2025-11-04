@@ -36,7 +36,7 @@ string KeyGenerator::GenerateKeyString() {
 			randomString += "-";
 	}
 
-	return baseName + randomString + "\n";
+	return baseName + randomString;
 }
 
 string KeyGenerator::GenerateKeyStrings(int count)
